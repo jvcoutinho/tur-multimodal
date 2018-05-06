@@ -45,6 +45,7 @@
         :parameters (?who ?where)
         :precondition (and 
                         (isStation ?where)
+                        (isAt ?who ?where)
                         (not (pedalled-30-min ?who)))
         :effect (waited-5-min ?who)
     )
