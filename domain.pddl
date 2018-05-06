@@ -73,7 +73,15 @@
                         (or ;Se é João e a estação é Paço Alfândega, João visitou Banco do Brasil.
                             (not (= ?who Joao))
                             (not (= ?where vp-paco-alfandega))
-                            (visited ?who vp-banco-do-brasil)))
+                            (visited Joao vp-banco-do-brasil))
+                        (or ;Se for Maria e o início é o Mercado, então José está lá.
+                            (not (= ?who Maria))
+                            (not (= ?where vp-mercado-sao-jose))
+                            (isAt Jose vp-mercado-sao-jose))
+                        (or ;Se for José e o início é o Mercado, então Maria está lá.
+                           (not (= ?who Jose))
+                           (not (= ?where vp-mercado-sao-jose))
+                           (isAt Maria vp-mercado-sao-jose)))
                                 
         :effect (and 
                     (visited ?who ?where)
