@@ -43,7 +43,9 @@
 
     (:action esperar-5-min
         :parameters (?who ?where)
-        :precondition (isStation ?where)
+        :precondition (and 
+                        (isStation ?where)
+                        (not (pedalled-30-min ?who)))
         :effect (waited-5-min ?who)
     )
 
