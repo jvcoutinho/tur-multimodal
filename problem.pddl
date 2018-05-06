@@ -60,6 +60,11 @@
         (isAt Joao st-praca-do-diario)
         (isAt Maria st-alfandega)
         (isAt Jose st-cais-do-apolo)
+
+        ;No waiting at the beginning.
+        (waited-5-min Joao)
+        (waited-5-min Maria)
+        (waited-5-min Jose)
     )
 
     (:goal (and
