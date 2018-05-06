@@ -37,7 +37,8 @@
                             (isAt ?who ?where))
         :effect (and
                     (not (hasBike ?who))
-                    (not (pedalled-30-min ?who)))
+                    (not (pedalled-30-min ?who))
+                    (not (waited-5-min ?who)))
                     ;(increase (numBikes ?where) 1))    
     )
 
