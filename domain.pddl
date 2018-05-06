@@ -69,7 +69,12 @@
         :parameters (?who ?where)
         :precondition (and 
                         (isAt ?who ?where)
-                        (isVisitationPoint ?where))   
+                        (isVisitationPoint ?where)
+                        (or ;Se é João e a estação é Paço Alfândega, João visitou Banco do Brasil.
+                            (not (= ?who Joao))
+                            (not (= ?where vp-paco-alfandega))
+                            (visited ?who vp-banco-do-brasil)))
+                                
         :effect (and 
                     (visited ?who ?where)
                     (waited-5-min ?who))
