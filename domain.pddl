@@ -78,7 +78,8 @@
                         (isAdjTo ?start ?destination)
                         (isAt ?who ?start)
                         (isStation ?start)
-                        (isStation ?destination))
+                        (isStation ?destination)
+                        (not (pedalled-30-min ?who)))
         :effect (and 
                     (not (isAt ?who ?start))
                     (isAt ?who ?destination)
