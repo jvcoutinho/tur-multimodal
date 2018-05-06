@@ -54,7 +54,8 @@
                             (isVisitationPoint ?destination)
                             (isVisitationPoint ?start))
                         (isAdjTo ?start ?destination)
-                        (isAt ?who ?start))
+                        (isAt ?who ?start)
+                        (not (hasBike ?who)))
         :effect (and 
                     (not (isAt ?who ?start))
                     (isAt ?who ?destination))
