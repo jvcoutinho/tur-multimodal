@@ -11,6 +11,9 @@
 
         ;People
         Joao    Maria   Jose
+
+        ;Numbers
+       zero one two three four five six seven eight
     )
 
     (:init
@@ -56,21 +59,45 @@
         (isAdjTo st-mercado-sao-jose vp-mercado-sao-jose)
         (isAdjTo vp-mercado-sao-jose st-mercado-sao-jose)
 
+        ;Defining people.
+        (isPerson Joao)
+        (isPerson Maria)
+        (isPerson Jose)
+
         ;Initial locations.
         (isAt Joao st-praca-do-diario)
         (isAt Maria st-alfandega)
         (isAt Jose st-cais-do-apolo)
+        (visited Joao st-praca-do-diario)
+        (visited Maria st-alfandega)
+        (visited Jose st-cais-do-apolo)
 
         ;No waiting at the beginning.
         (waited-5-min Joao)
         (waited-5-min Maria)
         (waited-5-min Jose)
+
+        ;Number of bikes.
+        (numBikes st-praca-do-diario one)
+        (numBikes st-alfandega zero)
+        (numBikes st-cais-do-apolo one)
+        (numBikes st-mercado-sao-jose two)
+        (numBikes st-praca-da-republica one)
+        (numBikes st-santa-rita three)
+        
+        ;Numeric comparisons.
+        (successor zero one)
+        (successor one two)
+        (successor two three)
+        (successor three four)
+        (successor four five)
+        (successor five six)
+        (successor six seven)
+        (successor seven eight)
+
     )
 
     (:goal (and
-                (isAt Joao st-praca-do-diario)
-                (isAt Maria st-alfandega)
-                (isAt Jose st-cais-do-apolo)
                 (visited Joao vp-banco-do-brasil)
                 (visited Joao vp-paco-alfandega)
                 (visited Jose vp-igreja-rosario)
@@ -79,6 +106,9 @@
                 (visited Maria vp-mercado-sao-jose)
                 (not (hasBike Joao))
                 (not (hasBike Maria))
-                (not (hasBike Jose)))
+                (not (hasBike Jose))
+                (return Joao st-praca-do-diario)
+                (return Maria st-alfandega)
+                (return Jose st-cais-do-apolo))
     )
 )
