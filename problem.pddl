@@ -33,6 +33,7 @@
         ;Adjacency.
         (isAdjTo st-praca-do-diario st-praca-da-republica)
         (isAdjTo st-praca-do-diario st-mercado-sao-jose)
+        (isAdjTo st-praca-do-diario st-santa-rita)
         (isAdjTo st-praca-do-diario vp-igreja-rosario)
         (isAdjTo vp-igreja-rosario st-praca-do-diario)
 
@@ -52,6 +53,7 @@
         (isAdjTo vp-paco-alfandega st-alfandega)
 
         (isAdjTo st-santa-rita st-alfandega)
+        (isAdjTo st-santa-rita st-praca-do-diario)
         (isAdjTo st-santa-rita st-mercado-sao-jose)
 
         (isAdjTo st-mercado-sao-jose st-santa-rita)
